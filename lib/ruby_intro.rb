@@ -1,17 +1,41 @@
 # When done, submit this entire file to the autograder.
 
 # Part 1
-
+# returns sum of elements in array
 def sum arr
-  # YOUR CODE HERE
+  total = 0
+  arr.each do |n| 
+    total += n
+  end
+  total
 end
 
+# returns sum of max two elements
 def max_2_sum arr
-  # YOUR CODE HERE
+  sortedArray = arr.sort.reverse
+  total = 0
+  sortedArray.each_index do |i|
+    if i >= 2
+      return total
+    end
+    total += sortedArray[i]
+  end
+  total
 end
 
+# return if sum of two elements equals to n
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  arr.each_index do |i|
+    arr.each_index do |j|
+      if i == j
+        next
+      end
+      if (arr[i] + arr[j]) == n
+        return true
+      end
+    end
+  end
+  false
 end
 
 # Part 2
