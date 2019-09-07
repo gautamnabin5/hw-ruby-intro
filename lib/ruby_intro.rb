@@ -41,15 +41,18 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  'Hello, ' + name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  return false if s.empty?
+  s.match?(/^(a|e|i|o|u|\W|\s)/i) == false
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  return false if (s.empty? || s.match?(/^[01]+$/) == false)
+  num = s.to_i
+  num % 4 == 0 ? true : false
 end
 
 # Part 3
