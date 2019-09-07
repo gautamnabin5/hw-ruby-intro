@@ -4,9 +4,7 @@
 # returns sum of elements in array
 def sum arr
   total = 0
-  arr.each do |n| 
-    total += n
-  end
+  arr.each {|n| total += n }
   total
 end
 
@@ -15,9 +13,7 @@ def max_2_sum arr
   sortedArray = arr.sort.reverse
   total = 0
   sortedArray.each_index do |i|
-    if i >= 2
-      return total
-    end
+    return total if i >= 2 
     total += sortedArray[i]
   end
   total
@@ -41,7 +37,7 @@ end
 # Part 2
 
 def hello(name)
-  'Hello, ' + name
+  "Hello, #{name}"
 end
 
 def starts_with_consonant? s
